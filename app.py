@@ -5,6 +5,10 @@ from orders import Orders
 # Create Flask instance
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return "Welcome to the Mini Shop API!"
+
 # Get all products
 @app.route('/products', methods=['GET'])
 def get_products():
@@ -113,4 +117,4 @@ def cancel_order(order_id):
 
 # Start the server
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
